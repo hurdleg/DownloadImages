@@ -60,6 +60,9 @@ public class MainActivity extends Activity
             if (intent.hasExtra(MyService.MY_SERVICE_PAYLOAD)) {
                 PlanetPOJO[] planetsArray = (PlanetPOJO[]) intent
                         .getParcelableArrayExtra(MyService.MY_SERVICE_PAYLOAD);
+                Toast.makeText(MainActivity.this,
+                        "Received " + planetsArray.length + " planets from service",
+                        Toast.LENGTH_SHORT).show();
 
                 mPlanetList = Arrays.asList(planetsArray);
 
